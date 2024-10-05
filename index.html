@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Scooby Forum</title>
+
+    <!-- daisyUi CDN  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font awesome CDN  -->
+    <script
+      src="https://kit.fontawesome.com/014e5a97b0.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="w-10/12 mx-auto">
+      <nav class="container mx-auto py-2">
+        <div class="navbar">
+          <div class="flex-1">
+            <a class="btn btn-ghost text-xl">SCOOBY</a>
+          </div>
+          <div class="flex-none gap-2">
+            <div class="form-control">
+              <div class="flex justify-around gap-x-4">
+                <i
+                  class="fa-solid fa-house bg-gray-400 p-2 rounded-full text-black hover:bg-gray-200 cursor-pointer transition-all"
+                ></i>
+                <i
+                  class="fa-solid fa-pen bg-gray-400 p-2 rounded-full text-black hover:bg-gray-200 cursor-pointer transition-all"
+                ></i>
+                <i
+                  class="fa-solid fa-user bg-gray-400 p-2 rounded-full text-black hover:bg-gray-200 cursor-pointer transition-all"
+                ></i>
+                <i
+                  class="fa-regular fa-flag bg-gray-400 p-2 rounded-full text-black hover:bg-gray-200 cursor-pointer transition-all"
+                ></i>
+              </div>
+            </div>
+            <div class="dropdown dropdown-end">
+              <button class="btn btn-primary rounded-full ml-3">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="container mx-auto w-11/12 lg:w-10/12">
+      <div class="hero min-h-96 rounded-3xl">
+        <div class="hero-overlay rounded-3xl lg:block">
+          <img class="w-full h-full rounded-lg" src="./assest/bg.jpg" alt="" />
+        </div>
+        <div
+          class="hero-content text-neutral-content py-12 lg:py-48 lg:flex-row flex-col gap-8 lg:gap-14"
+        >
+          <div class="lg:max-w-lg lg:space-y-8">
+            <h1 class="mb-5 text-3xl font-extrabold lg:text-6xl">
+              Welcome to the
+              <span
+                class="bg-gradient-to-r from-primary to-white-100 text-transparent bg-clip-text"
+                >ScOOby </span
+              >Forum
+            </h1>
+            <p class="mb-5 lg:text-xl text-lg font-light">
+              Here you can filter the posts by the latest, most popular, and
+              other type of categories, also enjoy the modern aesthetic design.
+            </p>
+            <label
+              class="input input-bordered flex items-center gap-2 w-4/5 rounded-full lg:py-8"
+            >
+              <input
+                id="searchPosts"
+                type="text"
+                class="grow"
+                placeholder="Search Here Anything..."
+              />
+              <button
+                onclick="searchInputValue()"
+                id="searchPostsBtn"
+                class="btn rounded-full bg-primary text-white hover:text-primary hover:bg-blue-950"
+              >
+                Search
+              </button>
+            </label>
+          </div>
+          <div
+            class="lg:max-w-md bg-white h-44 lg:h-52 lg:min-w-80 w-4/5 rounded-3xl flex flex-row items-center justify-evenly *:text-black lg:text-lg text-xs"
+          >
+            <div class="flex flex-col gap-5">
+              <p>Registered Users</p>
+              <p>Forum</p>
+              <p>Topics</p>
+              <p>Replies</p>
+            </div>
+            <div class="flex flex-col gap-5">
+              <p>01</p>
+              <p>05</p>
+              <p>01</p>
+              <p>01</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="md:w-5/12 mx-auto py-4 text-center">
+        <h2 class="font-bold text-4xl">Let's Discouss</h2>
+        <p class="text-gray-500 pt-3">
+          With the modern design and the latest features, you can discuss
+          whatever you want and see other people's opinions or discussions, also
+          you can see by categories and mark as read.
+        </p>
+      </div>
+    </section>
+
+    <!-- dynamic Card Here  -->
+    <section class="container mx-auto w-10/12 py-5">
+      <div class="lg:grid grid-cols-3 gap-3 mt-6">
+        <div id="displayCard" class="col-span-2"></div>
+        <!-- dynamic value setup  -->
+        <div class="col-span-1">
+          <div class="flex items-center justify-between">
+            <h4 class="font-bold text-xl">Title</h4>
+            <p class="opacity-50">
+              <i class="fa-solid fa-check-double text-green-500"></i> Mark as
+              read (<span id="markAsReadCounter">0</span>)
+            </p>
+          </div>
+
+          <!-- Mark Here  -->
+          <div id="counterNotify"></div>
+        </div>
+      </div>
+    </section>
+    <script src="./index.js"></script>
+  </body>
+</html>
